@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource("person","PersonController");
+Route::resource("animal","AnimalController",['only'=>[
+    'index']
+]);
+Route::post('animal','AnimalController@store');
